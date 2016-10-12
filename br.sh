@@ -9,7 +9,7 @@ esac
 
 max_br=`cat $dir_path/max_brightness`;
 
-if (($br > 100)) && (( $br < $max_br )) && [ -e "$dir_path/max_brightness" ]; then
+if [ -e "$dir_path/max_brightness" ] && (( $br > 100 )) && (( $br < $max_br )); then
     echo "$br" > "$dir_path/brightness";
 else
     echo -n "May be wrong or danger parameter. Current value: ";
